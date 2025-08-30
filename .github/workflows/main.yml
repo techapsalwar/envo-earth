@@ -29,7 +29,8 @@ jobs:
           npm run build
 
       - name: Setup SSH agent
-        uses: webfactory/ssh-agent@v0.8.1
+        # v0.8.1 may not be available on the runner; pin to a known released version
+        uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
